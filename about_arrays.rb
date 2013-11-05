@@ -33,6 +33,7 @@ class AboutArrays < Neo::Koan
   end
 
   def test_slicing_arrays
+    # slice(start, length)
     array = [:peanut, :butter, :and, :jelly]
 
     assert_equal [:peanut], array[0,1]

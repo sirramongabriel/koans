@@ -114,7 +114,7 @@ class AboutClassMethods < Neo::Koan
                                end
 
   def test_self_while_inside_class_is_class_object_not_instance
-    assert_equal , Dog == SelfInsideOfClassStatement
+    assert_equal true, Dog == SelfInsideOfClassStatement
   end
 
   # ------------------------------------------------------------------
@@ -126,7 +126,7 @@ class AboutClassMethods < Neo::Koan
   end
 
   def test_you_can_use_self_instead_of_an_explicit_reference_to_dog
-    assert_equal __, Dog.class_method2
+    assert_equal :another_way_to_write_class_methods, Dog.class_method2
   end
 
   # ------------------------------------------------------------------
@@ -140,7 +140,7 @@ class AboutClassMethods < Neo::Koan
   end
 
   def test_heres_still_another_way_to_write_class_methods
-    assert_equal __, Dog.another_class_method
+    assert_equal :still_another_way, Dog.another_class_method
   end
 
   # THINK ABOUT IT:
@@ -158,12 +158,17 @@ class AboutClassMethods < Neo::Koan
   #
   # Which do you prefer and why?
   # Are there times you might prefer one over the other?
+  #
+  # I prefer the self.method way, because I can still inherit my class from a parent 
+  # this way.
+  #
+  # I could use class << self when I want a class that contains no instance_methods
 
   # ------------------------------------------------------------------
 
   def test_heres_an_easy_way_to_call_class_methods_from_instance_methods
     fido = Dog.new
-    assert_equal __, fido.class.another_class_method
+    assert_equal :still_another_way, fido.class.another_class_method
   end
 
 end
