@@ -1,3 +1,0 @@
-class DiceSet < AboutDiceProject
-
-end
