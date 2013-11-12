@@ -1,7 +1,7 @@
 class Player
-  # attr_accessor :name, :score
-  # def initialize(score)
-  #   @player = Self.new
-  #   @score = score
-  # end
+  attr_accessor :name
+
+  def initialize(string)
+    @name = string
+  end
 end
